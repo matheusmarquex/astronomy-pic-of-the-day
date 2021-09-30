@@ -29,7 +29,10 @@ function App() {
 
       <div className="container__video__expl">
         <div className="div__video">
-          <iframe
+          {pic.media_type === "image" ? (
+            <img src={pic.url} alt="image" width="600px"/>
+          ): (
+            <iframe
             width="560"
             height="315"
             src={pic.url}
@@ -39,6 +42,7 @@ function App() {
             allowfullscreen
             id="idframe"
           ></iframe>
+          )}
         </div>
         <div className="div__exp">
           <p>{pic.explanation}</p>
